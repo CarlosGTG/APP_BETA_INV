@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "352913613282",
+    "project_id": "smartcloud-f0dcf",
+    "storage_bucket": "smartcloud-f0dcf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352913613282:android:817cde6dbfa058338e19bb",
+        "android_client_info": {
+          "package_name": "com.example.smart_cloud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFwOefB4NbCiNWkZkuLUigh1-Lcg1LlSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
