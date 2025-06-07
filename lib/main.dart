@@ -17,8 +17,23 @@ class InventoryApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Inventory App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+theme: ThemeData.dark().copyWith(
+        primaryColor: Colors.deepPurple,
+        scaffoldBackgroundColor: Colors.grey[900],
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.grey[850],
+          iconTheme: const IconThemeData(color: Colors.white),
+        ),
+        textTheme: const TextTheme(
+          bodyLarge: TextStyle(color: Colors.white),
+          bodyMedium: TextStyle(color: Colors.white70),
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.deepPurple,
+            foregroundColor: Colors.white,
+          ),
+        ),
       ),
       initialRoute: '/login',
       routes: {

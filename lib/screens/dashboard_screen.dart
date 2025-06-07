@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Services/firebase_service.dart';
+import '../widgets/sales_chart.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -31,35 +32,84 @@ class DashboardScreenState extends State<DashboardScreen> {
           )
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text('Welcome to Inventory App', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 20),
-            const Text('Sales: \$0', style: TextStyle(fontSize: 18)),
-            const Text('Profits: \$0', style: TextStyle(fontSize: 18)),
-            const Text('Inventory Items: 0', style: TextStyle(fontSize: 18)),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to inventory management screen (to be implemented)
-              },
-              child: const Text('Manage Inventory'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to sales management screen (to be implemented)
-              },
-              child: const Text('Manage Sales'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to purchases management screen (to be implemented)
-              },
-              child: const Text('Manage Purchases'),
-            ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.grey[850],
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Welcome to Inventory App',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Text('Sales: \$0',
+                        style: TextStyle(fontSize: 18, color: Colors.white70)),
+                    Text('Profits: \$0',
+                        style: TextStyle(fontSize: 18, color: Colors.white70)),
+                    Text('Inventory Items: 0',
+                        style: TextStyle(fontSize: 18, color: Colors.white70)),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+              const SalesChart(),
+              const SizedBox(height: 20),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.grey[850],
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        // Navigate to inventory management screen
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(16),
+                      ),
+                      child: const Text('Manage Inventory'),
+                    ),
+                    const SizedBox(height: 12),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Navigate to sales management screen
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(16),
+                      ),
+                      child: const Text('Manage Sales'),
+                    ),
+                    const SizedBox(height: 12),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Navigate to purchases management screen
+                      },
+                      style: ElevatedButton.styleFrom(
+                        padding: const EdgeInsets.all(16),
+                      ),
+                      child: const Text('Manage Purchases'),
+                    ),
+                  ],
+                ),
+              ),
           ],
         ),
       ),
